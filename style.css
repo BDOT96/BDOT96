@@ -1,0 +1,283 @@
+/* --- Global Styles --- */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    color: #333;
+    background-color: #fcfaf8;
+    margin: 0; /* Ensures the header touches the edges if needed */
+}
+
+h1, h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+/* This removes the weird white gap at the very top of the page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container for the whole top section */
+.header-container {
+    margin: 20px;
+}
+
+/* The box holding the two images side-by-side */
+.hero-image-wrapper {
+    display: flex;
+    gap: 10px; /* Adds a small gap between the two images */
+    height: 35vh; /* Adjust this to make the banner thinner or taller */
+    margin-bottom: 20px;
+}
+
+.hero-image-wrapper img {
+    width: 50%; /* Each takes half the width */
+    height: 100%;
+    object-fit: cover; /* KEY: This crops the image instead of stretching it */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Styling for the text underneath */
+.header-text {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.header-text h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.header-text p {
+    font-size: 1.1rem;
+    color: #666;
+}
+/* This makes sure the text is still readable over the two images */
+.header-overlay {
+    background: rgba(0, 0, 0, 0.4); 
+    color: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+}
+
+/* This creates a soft dark "tint" so you can actually read your name */
+.header-overlay {
+    background: rgba(0, 0, 0, 0.5); 
+    padding: 20px 40px;
+    border-radius: 15px;
+    color: white;
+}
+
+.header-overlay h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+/* Added: Only lift the image when hovering over it */
+.hero-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px rgba(0,0,0,0.1);
+}
+
+/* --- Content Layout --- */
+.blog-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* --- Work Grid Section --- */
+.my-work {
+    max-width: 1000px;
+    margin: 80px auto; /* Added extra space between sections */
+    padding: 0 20px;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.work-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    aspect-ratio: 1 / 1;
+    display: block;
+    background-color: #eee; /* Placeholder color while images load */
+}
+
+.work-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Work Item Hover Effects */
+.work-item:hover img {
+    transform: scale(1.1);
+}
+
+.work-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.work-item:hover .work-overlay {
+    opacity: 1;
+}
+
+.work-overlay span {
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border: 1px solid white;
+    padding: 8px 16px;
+}
+
+/* Container for the footer */
+.footer-container {
+    margin: 40px 20px 20px 20px; /* More space at the top to separate from content */
+    text-align: center;
+}
+
+/* The box holding the two images side-by-side */
+.footer-image-wrapper {
+    display: flex;
+    gap: 10px;
+    height: 15vh; /* Thinner than the header for a subtle finish */
+    margin-bottom: 20px;
+}
+
+.footer-image-wrapper img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover; /* Keeps images from stretching */
+    border-radius: 12px;
+    opacity: 0.8; /* Slightly faded so it doesn't compete with the header */
+    transition: opacity 0.3s ease;
+}
+
+/* Subtle hover effect */
+.footer-image-wrapper img:hover {
+    opacity: 1;
+}
+
+.footer-text p {
+    font-size: 0.9rem;
+    color: #888;
+    margin: 5px 0;
+}
+
+/*works untitled styling */
+.external-links {
+    margin-top: 50px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 15px;
+}
+
+.link-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Side by side */
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 12px;
+    background: white;
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.social-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.card-text strong {
+    display: block;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.card-text span {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* Specific colors for branding */
+.youtube:hover { border-color: #ff0000; }
+.substack:hover { border-color: #ff6719; }
+
+/* On phones, stack them vertically */
+@media (max-width: 600px) {
+    .link-grid { grid-template-columns: 1fr; }
+}
+
+/* Container for the gallery */
+.drawing-gallery {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.gallery-scroll-container {
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    gap: 15px;
+    scroll-snap-type: x mandatory; /* Makes the "snapping" effect work */
+    padding-bottom: 10px;
+    
+    /* Hide scrollbar for a cleaner look (optional) */
+    scrollbar-width: thin;
+    scrollbar-color: #3498db #eee;
+}
+
+.gallery-scroll-container img {
+    flex: 0 0 80%; /* Each image takes up 80% of the width */
+    height: 400px; /* Adjust based on how tall you want your drawings */
+    object-fit: cover;
+    border-radius: 15px;
+    scroll-snap-align: center; /* Snaps the image to the center of the screen */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-hint {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* On desktop, make images a bit smaller so you can see the next one peeking in */
+@media (min-width: 800px) {
+    .gallery-scroll-container img {
+        flex: 0 0 60%;
+    }
+}
