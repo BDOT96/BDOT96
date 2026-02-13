@@ -281,3 +281,36 @@ h1, h2 {
         flex: 0 0 60%;
     }
 }
+
+.top-nav {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.home-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px; /* Pill shape */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.home-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    background-color: #3498db; /* Your signature blue */
+    color: white;
+    border-color: #3498db;
+}
+
+.home-button .icon {
+    font-size: 1.1rem;
+}
